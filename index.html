@@ -281,7 +281,23 @@
       isPlaying = !isPlaying;
     });
 
-    
+    // CHỐNG DEBUG / F12 / CHUỘT PHẢI
+    document.addEventListener('keydown', function(e) {
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
+        (e.ctrlKey && ['U', 'S'].includes(e.key.toUpperCase()))
+      ) {
+        e.preventDefault();
+        alert("Không được phép truy cập công cụ dành cho nhà phát triển!");
+      }
+    });
+
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert("Chuột phải đã bị vô hiệu hoá!");
+    });
+   
     }, 1000);
   </script>
 </body>
