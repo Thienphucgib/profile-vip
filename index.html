@@ -217,7 +217,7 @@
 
   <!-- Nhạc nền -->
   <audio id="backgroundMusic" loop>
-    <source src="/nhac.mp4" type="audio/mpeg">
+    <source src="/nhac.mp3" type="audio/mpeg">
     Trình duyệt không hỗ trợ nhạc.
   </audio>
 
@@ -281,27 +281,7 @@
       isPlaying = !isPlaying;
     });
 
-    // CHỐNG DEBUG / F12 / CHUỘT PHẢI
-    document.addEventListener('keydown', function(e) {
-      if (
-        e.key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
-        (e.ctrlKey && ['U', 'S'].includes(e.key.toUpperCase()))
-      ) {
-        e.preventDefault();
-        alert("Không được phép truy cập công cụ dành cho nhà phát triển!");
-      }
-    });
-
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-      alert("Chuột phải đã bị vô hiệu hoá!");
-    });
-    setInterval(function () {
-      if (window.outerWidth - window.innerWidth > 100 || window.outerHeight - window.innerHeight > 100) {
-        document.body.innerHTML = '<h1 style="color:red;text-align:center;margin-top:20%;">Trang bị khoá vì nghi ngờ truy cập trái phép Developer Tools!</h1>';
     
-      }
     }, 1000);
   </script>
 </body>
